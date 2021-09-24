@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/PaperPickup3.wav-842b493aafa3e5b875f49cd58aad969f.sample"
+
+[deps]
+
+source_file="res://Game_Files/SFX/PaperPickup3.wav"
+dest_files=[ "res://.import/PaperPickup3.wav-842b493aafa3e5b875f49cd58aad969f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

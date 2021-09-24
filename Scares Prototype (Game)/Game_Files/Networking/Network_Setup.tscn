@@ -1,0 +1,77 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Game_Files/Assets_UI/Base_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Game_Files/Networking/Network_Setup.gd" type="Script" id=2]
+
+[node name="Network_Setup" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Multiplayer_Configure" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Create_Server" type="Button" parent="Multiplayer_Configure"]
+anchor_left = 0.5
+anchor_top = 0.393
+anchor_right = 0.5
+anchor_bottom = 0.393
+margin_left = -267.0
+margin_top = -85.44
+margin_right = 268.0
+margin_bottom = 90.56
+custom_fonts/font = ExtResource( 1 )
+text = "Create Server"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Join_Server" type="Button" parent="Multiplayer_Configure"]
+anchor_left = 0.5
+anchor_top = 0.604
+anchor_right = 0.5
+anchor_bottom = 0.604
+margin_left = -267.0
+margin_top = -88.32
+margin_right = 268.0
+margin_bottom = 87.68
+custom_fonts/font = ExtResource( 1 )
+text = "Join Server"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Server_IP_Address" type="LineEdit" parent="Multiplayer_Configure"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -429.0
+margin_top = 123.0
+margin_right = 421.0
+margin_bottom = 228.0
+custom_fonts/font = ExtResource( 1 )
+align = 1
+placeholder_text = "Enter I{p"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Device_IP_Address" type="Label" parent="CanvasLayer"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -150.0
+custom_fonts/font = ExtResource( 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Multiplayer_Configure/Create_Server" to="." method="_on_Create_Server_pressed"]
+[connection signal="pressed" from="Multiplayer_Configure/Join_Server" to="." method="_on_Join_Server_pressed"]

@@ -1,0 +1,130 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Game_Files/Assets_UI/Interface/Theme/fonts/FFFFORWA.TTF" type="DynamicFontData" id=1]
+[ext_resource path="res://Scenes/Victory.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/FadeIn.tscn" type="PackedScene" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 8
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 8
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "FadeOut"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[node name="Victory" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0901961, 0.0901961, 0.0901961, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_top = 160.0
+margin_right = 320.0
+margin_bottom = 171.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Retry" type="Button" parent="HBoxContainer"]
+margin_left = 106.0
+margin_right = 139.0
+margin_bottom = 17.0
+custom_fonts/font = SubResource( 1 )
+text = "Quit"
+flat = true
+
+[node name="Main Menu" type="Button" parent="HBoxContainer"]
+margin_left = 143.0
+margin_right = 213.0
+margin_bottom = 17.0
+custom_fonts/font = SubResource( 1 )
+text = "Main Menu"
+flat = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.49829
+margin_top = 62.9966
+margin_right = 1.49829
+margin_bottom = -80.0034
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 320.0
+margin_bottom = 22.0
+custom_fonts/font = SubResource( 2 )
+text = "You Won"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+margin_top = 26.0
+margin_right = 320.0
+margin_bottom = 37.0
+custom_fonts/font = SubResource( 3 )
+text = "Thank you for playing..."
+align = 1
+valign = 1
+
+[node name="FadeOutSprite" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FadeOut" type="AnimationPlayer" parent="FadeOutSprite"]
+anims/FadeOut = SubResource( 4 )
+
+[node name="FadeIn" parent="." instance=ExtResource( 5 )]
+visible = false
+
+[connection signal="pressed" from="HBoxContainer/Retry" to="." method="_on_Retry_pressed"]
+[connection signal="pressed" from="HBoxContainer/Main Menu" to="." method="_on_Main_Menu_pressed"]
+[connection signal="fade_in_finished" from="FadeIn" to="." method="_on_FadeIn_fade_in_finished"]

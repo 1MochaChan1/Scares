@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Game_Files/Env/Assets/Bush_colored_match.png" type="Texture" id=1]
+[ext_resource path="res://Game_Files/Env/Assets/Objects/Bush.gd" type="Script" id=2]
+
+[sub_resource type="OccluderPolygon2D" id=2]
+polygon = PoolVector2Array( -7.96875, -0.507813, -7.96121, -2.49182, -7.00331, -2.52578, -6.99219, -4.46094, -5.99219, -4.48438, -5.97656, -5.5, -5, -5.5, -4.99219, -6.47656, -3.01563, -6.5, -2.96094, -7.49219, 3.00552, -7.48143, 2.99623, -6.45945, 4.99372, -6.50591, 4.98443, -5.48393, 5.98782, -5.46535, 6.0157, -4.52699, 6.96875, -4.49219, 7.01563, -3.50781, 7.96875, -3.51563, 7.96549, -0.510341, 8.10842, -0.544809, 8.10938, -3.64063, 7.147, -3.61855, 7.08801, -4.59192, 6.11464, -4.60667, 6.05605, -5.54481, 5.07633, -5.56961, 5.0625, -6.58594, 3.07031, -6.53125, 3.08594, -7.54688, -3.01563, -7.5625, -3.07031, -6.5625, -5.04351, -6.53511, -5.06105, -5.55296, -6.03125, -5.54688, -6.05469, -4.54688, -7.0625, -4.51563, -7.04688, -2.58594, -8.03125, -2.55469, -8.02344, -0.5 )
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 5.19799
+height = 6.0731
+
+[sub_resource type="Animation" id=4]
+resource_name = "Interacted"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.0678959, 8.43678 ), Vector2( 0.068, 8.418 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 0.772078 ), Vector2( 1, 1 ) ]
+}
+
+[node name="Bush" type="Area2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0.068, 8.418 )
+texture = ExtResource( 1 )
+offset = Vector2( -0.0678959, -7.41811 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite"]
+position = Vector2( -0.0462456, -7.27748 )
+occluder = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.26424, -2.09317 )
+rotation = 1.5708
+shape = SubResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Interacted = SubResource( 4 )
+
+[connection signal="body_entered" from="." to="." method="_on_Bush_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_Bush_body_exited"]

@@ -1,0 +1,112 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scenes/FadeIn.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game_Files/Assets_UI/Interface/Theme/fonts/FFFFORWA.TTF" type="DynamicFontData" id=2]
+[ext_resource path="res://Scenes/Death.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Fade Out Black.gd" type="Script" id=4]
+[ext_resource path="res://Game_Files/SFX/Death.wav" type="AudioStream" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 8
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "FadeOut"
+length = 2.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1.05, 2.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+
+[node name="Dead Screen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0901961, 0.0901961, 0.0901961, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_top = 160.0
+margin_right = 320.0
+margin_bottom = 171.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Retry" type="Button" parent="HBoxContainer"]
+margin_left = 102.0
+margin_right = 143.0
+margin_bottom = 17.0
+custom_fonts/font = SubResource( 1 )
+text = "Retry"
+flat = true
+
+[node name="Main Menu" type="Button" parent="HBoxContainer"]
+margin_left = 147.0
+margin_right = 217.0
+margin_bottom = 17.0
+custom_fonts/font = SubResource( 1 )
+text = "Main Menu"
+flat = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 60.0
+margin_bottom = -84.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 320.0
+margin_bottom = 22.0
+custom_fonts/font = SubResource( 2 )
+text = "You are Dead"
+align = 1
+valign = 1
+
+[node name="FadeOutBlack" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FadeOutBlack"]
+anims/FadeOut = SubResource( 3 )
+
+[node name="FadeIn" parent="." instance=ExtResource( 1 )]
+visible = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[connection signal="pressed" from="HBoxContainer/Retry" to="." method="_on_Retry_pressed"]
+[connection signal="pressed" from="HBoxContainer/Main Menu" to="." method="_on_Main_Menu_pressed"]
+[connection signal="animation_finished" from="FadeOutBlack/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="fade_in_finished" from="FadeIn" to="." method="_on_FadeIn_fade_in_finished"]

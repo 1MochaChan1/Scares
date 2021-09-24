@@ -1,0 +1,345 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Game_Files/Env/Assets/GrassBackground_bg.png" type="Texture" id=1]
+[ext_resource path="res://Game_Files/Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Game_Files/Env/Assets/Objects/Note.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Game_Files/Enemy/Enemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Game_Files/Env/Assets/Objects/Tree.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Game_Files/Env/Assets/Objects/Bush.tscn" type="PackedScene" id=6]
+
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( 72, 204, 680, 188, 772, 188, 212, 204, 840, 124, 820, 124, 232, 108, 484, 108, 660, 188, 728, 76, 708, 76, 392, 60, 392, 44, 596, 316, 616, 316, 812, 324, 776, 396, 756, 396, 440, 380, 440, 364, 408, 236, 408, 220, 772, 204, 792, 204, 744, 268, 724, 268, 552, 252, 728, 92, 584, 108, 708, 92, 832, 308, 812, 308, 744, 284, 672, 460, 912, 536, -16, 536, 652, 460, 552, 412, 652, 444, 312, 452, 532, 412, 292, 452, 120, 444, 292, 436, 840, 140, 912, -16, 832, 324, 756, 412, 776, 412, 672, 444, 100, 444, 792, 188, 820, 140, 552, 396, 584, 92, 280, 364, 120, 428, 260, 364, 724, 284, 616, 300, 136, 268, 136, 252, 532, 268, 596, 300, 344, 284, 568, 172, 72, 188, 548, 172, 532, 396, 312, 436, 420, 380, 372, 44, 372, 60, 72, 60, 72, 44, 564, 92, 564, 108, 504, 108, 504, 92, 484, 92, 680, 172, 568, 156, 660, 172, 312, 156, 312, 140, 548, 156, 292, 156, 232, 220, 232, 204, 388, 220, 388, 236, 552, 268, 532, 252, 344, 300, 420, 364, 324, 284, 280, 348, 324, 300, 200, 348, 200, 332, 260, 348, 40, 348, 40, 332, 180, 348, 100, 428, 180, 332, 116, 268, 292, 140, 212, 108, -16, -16, 52, 44, 52, 60, 20, 332, 20, 348, 232, 92, 116, 252, 52, 204, 212, 92, 52, 188, 212, 220 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 7 ), PoolIntArray( 8, 1, 0 ), PoolIntArray( 9, 10, 11, 12 ), PoolIntArray( 13, 14, 15, 16, 17, 18, 19 ), PoolIntArray( 20, 21, 22, 23, 24, 25, 26 ), PoolIntArray( 27, 4, 28, 29 ), PoolIntArray( 23, 30, 31, 32, 24 ), PoolIntArray( 33, 34, 35, 36 ), PoolIntArray( 37, 38, 36, 35, 39, 40 ), PoolIntArray( 41, 39, 35 ), PoolIntArray( 41, 35, 42, 43 ), PoolIntArray( 44, 45, 34, 46, 30 ), PoolIntArray( 45, 44, 4 ), PoolIntArray( 47, 48, 34, 33, 49 ), PoolIntArray( 46, 34, 48, 16, 15 ), PoolIntArray( 50, 42, 35 ), PoolIntArray( 44, 30, 23, 51, 52 ), PoolIntArray( 17, 47, 49, 38, 37, 53 ), PoolIntArray( 29, 28, 54, 10 ), PoolIntArray( 55, 43, 42, 56, 57 ), PoolIntArray( 58, 32, 31, 15, 14, 59 ), PoolIntArray( 60, 61, 62, 58, 59, 63, 64 ), PoolIntArray( 65, 8, 0, 66, 67 ), PoolIntArray( 18, 68, 40, 39, 69, 70 ), PoolIntArray( 71, 72, 73, 74 ), PoolIntArray( 11, 10, 54, 75 ), PoolIntArray( 75, 76, 77, 78 ), PoolIntArray( 11, 75, 78 ), PoolIntArray( 11, 78, 79 ), PoolIntArray( 2, 1, 80, 52 ), PoolIntArray( 65, 81, 82, 8 ), PoolIntArray( 83, 84, 85, 67 ), PoolIntArray( 83, 67, 66, 86 ), PoolIntArray( 87, 88, 89, 90 ), PoolIntArray( 91, 26, 25, 58 ), PoolIntArray( 20, 26, 92 ), PoolIntArray( 93, 64, 63, 13, 19, 94 ), PoolIntArray( 60, 64, 95 ), PoolIntArray( 55, 96, 97, 93, 94, 70, 69, 43 ), PoolIntArray( 98, 99, 100, 57 ), PoolIntArray( 18, 17, 53 ), PoolIntArray( 18, 53, 68 ), PoolIntArray( 6, 5, 52, 81, 85, 84 ), PoolIntArray( 88, 2, 22, 21, 89 ), PoolIntArray( 101, 102, 103, 57, 56, 104 ), PoolIntArray( 60, 95, 97, 96, 100, 99 ), PoolIntArray( 60, 99, 105, 106 ), PoolIntArray( 20, 92, 62, 90 ), PoolIntArray( 6, 107, 86, 66, 108 ), PoolIntArray( 45, 4, 27, 9 ), PoolIntArray( 109, 45, 9, 12 ), PoolIntArray( 109, 12, 71 ), PoolIntArray( 109, 71, 74 ), PoolIntArray( 109, 74, 110 ), PoolIntArray( 35, 109, 110, 111, 112 ), PoolIntArray( 11, 79, 7, 72 ), PoolIntArray( 52, 51, 2 ), PoolIntArray( 35, 113, 101, 104, 50 ), PoolIntArray( 106, 105, 103, 102 ), PoolIntArray( 73, 72, 7, 114 ), PoolIntArray( 103, 98, 57 ), PoolIntArray( 115, 106, 102, 112, 116, 0 ), PoolIntArray( 52, 80, 82, 81 ), PoolIntArray( 6, 84, 107 ), PoolIntArray( 117, 108, 66, 118, 73 ), PoolIntArray( 112, 113, 35 ), PoolIntArray( 112, 111, 73, 118 ), PoolIntArray( 119, 87, 90, 62, 61 ), PoolIntArray( 62, 91, 58 ), PoolIntArray( 3, 119, 61, 115, 0 ), PoolIntArray( 76, 28, 4 ), PoolIntArray( 77, 76, 4 ), PoolIntArray( 7, 77, 4 ), PoolIntArray( 7, 6, 114 ), PoolIntArray( 73, 114, 117 ), PoolIntArray( 112, 118, 116 ), PoolIntArray( 3, 2, 88 ) ]
+outlines = [ PoolVector2Array( -16, -16, 912, -16, 912, 536, -16, 536 ), PoolVector2Array( 100, 444, 120, 444, 120, 428, 100, 428 ), PoolVector2Array( 260, 348, 260, 364, 280, 364, 280, 348 ), PoolVector2Array( 420, 364, 420, 380, 440, 380, 440, 364 ), PoolVector2Array( 180, 332, 180, 348, 200, 348, 200, 332 ), PoolVector2Array( 324, 284, 324, 300, 344, 300, 344, 284 ), PoolVector2Array( 388, 220, 388, 236, 408, 236, 408, 220 ), PoolVector2Array( 548, 156, 568, 156, 568, 172, 548, 172 ), PoolVector2Array( 292, 140, 292, 156, 312, 156, 312, 140 ), PoolVector2Array( 212, 92, 212, 108, 232, 108, 232, 92 ), PoolVector2Array( 52, 44, 52, 60, 72, 60, 72, 44 ), PoolVector2Array( 52, 188, 52, 204, 72, 204, 72, 188 ), PoolVector2Array( 116, 268, 136, 268, 136, 252, 116, 252 ), PoolVector2Array( 20, 348, 40, 348, 40, 332, 20, 332 ), PoolVector2Array( 212, 220, 232, 220, 232, 204, 212, 204 ), PoolVector2Array( 372, 60, 392, 60, 392, 44, 372, 44 ), PoolVector2Array( 484, 92, 504, 92, 504, 108, 484, 108 ), PoolVector2Array( 564, 92, 564, 108, 584, 108, 584, 92 ), PoolVector2Array( 708, 76, 708, 92, 728, 92, 728, 76 ), PoolVector2Array( 532, 252, 532, 268, 552, 268, 552, 252 ), PoolVector2Array( 532, 396, 532, 412, 552, 412, 552, 396 ), PoolVector2Array( 756, 396, 756, 412, 776, 412, 776, 396 ), PoolVector2Array( 660, 188, 680, 188, 680, 172, 660, 172 ), PoolVector2Array( 772, 188, 772, 204, 792, 204, 792, 188 ), PoolVector2Array( 596, 300, 596, 316, 616, 316, 616, 300 ), PoolVector2Array( 820, 124, 820, 140, 840, 140, 840, 124 ), PoolVector2Array( 744, 268, 744, 284, 724, 284, 724, 268 ), PoolVector2Array( 292, 436, 292, 452, 312, 452, 312, 436 ), PoolVector2Array( 652, 444, 652, 460, 672, 460, 672, 444 ), PoolVector2Array( 812, 308, 812, 324, 832, 324, 832, 308 ) ]
+
+[sub_resource type="SegmentShape2D" id=2]
+a = Vector2( 880, 0 )
+b = Vector2( 0, 0 )
+
+[sub_resource type="SegmentShape2D" id=3]
+a = Vector2( 0, 480 )
+b = Vector2( 0, 0 )
+
+[node name="Main" type="Node2D"]
+__meta__ = {
+"_edit_vertical_guides_": [ 1904.0 ]
+}
+
+[node name="GrassBackground_bg" type="Sprite" parent="."]
+position = Vector2( -24, -28 )
+texture = ExtResource( 1 )
+centered = false
+flip_h = true
+region_enabled = true
+region_rect = Rect2( -464, -368, 944, 576 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.117647, 0.133333, 0.113725, 1 )
+
+[node name="Path" type="Line2D" parent="." groups=[
+"PathFollow",
+]]
+visible = false
+position = Vector2( 28, -96 )
+points = PoolVector2Array( 176, 236, 248, 252, 280, 284, 296, 320, 348, 352, 380, 388, 436, 388, 552, 392, 600, 440, 712, 468 )
+width = 2.0
+
+[node name="Path2" type="Line2D" parent="." groups=[
+"PathFollow",
+]]
+visible = false
+position = Vector2( -72, -100 )
+points = PoolVector2Array( 860, 196, 788, 212, 692, 216, 576, 236, 508, 228, 444, 180, 332, 148 )
+width = 2.0
+
+[node name="Path3" type="Line2D" parent="." groups=[
+"PathFollow",
+]]
+visible = false
+points = PoolVector2Array( 100, 4, 60, 88, 80, 164, 96, 272, 220, 312, 244, 372, 356, 392, 456, 388, 540, 440, 624, 464, 768, 460 )
+width = 2.0
+
+[node name="Path4" type="Line2D" parent="." groups=[
+"PathFollow",
+]]
+visible = false
+position = Vector2( 756, 144 )
+points = PoolVector2Array( -212, -116, -84, -132, 28, -112, 88, -44, 76, 84, 20, 100, 8, 168, 44, 224 )
+width = 5.0
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Enemy" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 640, 252 )
+
+[node name="Enemy2" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 292, 296 )
+path_number = 1
+
+[node name="Enemy3" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 144, 80 )
+path_number = 2
+
+[node name="Enemy4" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 828, 396 )
+path_number = 3
+
+[node name="Player" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 40, 468 )
+
+[node name="Bush" parent="YSort" groups=[
+"Bush",
+] instance=ExtResource( 6 )]
+position = Vector2( 104, 88 )
+
+[node name="Bush2" parent="YSort" groups=[
+"Bush",
+] instance=ExtResource( 6 )]
+position = Vector2( 388, 132 )
+
+[node name="Bush3" parent="YSort" groups=[
+"Bush",
+] instance=ExtResource( 6 )]
+position = Vector2( 272, 224 )
+
+[node name="Bush4" parent="YSort" groups=[
+"Bush",
+] instance=ExtResource( 6 )]
+position = Vector2( 520, 180 )
+
+[node name="Bush5" parent="YSort" groups=[
+"Bush",
+] instance=ExtResource( 6 )]
+position = Vector2( 552, 72 )
+
+[node name="Bush6" parent="YSort" groups=[
+"Bush",
+] instance=ExtResource( 6 )]
+position = Vector2( 616, 204 )
+
+[node name="Bush7" parent="YSort" groups=[
+"Bush",
+] instance=ExtResource( 6 )]
+position = Vector2( 440, 268 )
+
+[node name="Bush8" parent="YSort" groups=[
+"Bush",
+] instance=ExtResource( 6 )]
+position = Vector2( 316, 356 )
+
+[node name="Bush9" parent="YSort" groups=[
+"Bush",
+] instance=ExtResource( 6 )]
+position = Vector2( 620, 368 )
+
+[node name="Bush10" parent="YSort" groups=[
+"Bush",
+] instance=ExtResource( 6 )]
+position = Vector2( 496, 328 )
+
+[node name="Bush11" parent="YSort" groups=[
+"Bush",
+] instance=ExtResource( 6 )]
+position = Vector2( 208, 276 )
+
+[node name="Bush12" parent="YSort" groups=[
+"Bush",
+] instance=ExtResource( 6 )]
+position = Vector2( 104, 340 )
+
+[node name="Bush13" parent="YSort" groups=[
+"Bush",
+] instance=ExtResource( 6 )]
+position = Vector2( 256, 436 )
+
+[node name="Bush14" parent="YSort" groups=[
+"Bush",
+] instance=ExtResource( 6 )]
+position = Vector2( 764, 348 )
+
+[node name="Bush15" parent="YSort" groups=[
+"Bush",
+] instance=ExtResource( 6 )]
+position = Vector2( 680, 296 )
+
+[node name="Bush16" parent="YSort" groups=[
+"Bush",
+] instance=ExtResource( 6 )]
+position = Vector2( 804, 256 )
+
+[node name="Bush17" parent="YSort" groups=[
+"Bush",
+] instance=ExtResource( 6 )]
+position = Vector2( 748, 136 )
+
+[node name="Bush18" parent="YSort" groups=[
+"Bush",
+] instance=ExtResource( 6 )]
+position = Vector2( 624, 36 )
+
+[node name="Bush19" parent="YSort" groups=[
+"Bush",
+] instance=ExtResource( 6 )]
+position = Vector2( 432, 28 )
+
+[node name="Bush20" parent="YSort" groups=[
+"Bush",
+] instance=ExtResource( 6 )]
+position = Vector2( 816, 452 )
+
+[node name="Bush21" parent="YSort" groups=[
+"Bush",
+] instance=ExtResource( 6 )]
+position = Vector2( 452, 436 )
+
+[node name="Tree" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 64, 48 )
+
+[node name="Tree2" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 224, 96 )
+
+[node name="Tree3" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 496, 96 )
+
+[node name="Tree4" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 560, 160 )
+
+[node name="Tree7" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 400, 224 )
+
+[node name="Tree8" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 720, 80 )
+
+[node name="Tree9" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 736, 272 )
+
+[node name="Tree10" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 432, 368 )
+
+[node name="Tree23" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 768, 400 )
+
+[node name="Tree24" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 832, 128 )
+
+[node name="Tree25" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 784, 192 )
+
+[node name="Tree11" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 192, 336 )
+
+[node name="Tree28" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 304, 440 )
+
+[node name="Tree26" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 32, 336 )
+
+[node name="Tree12" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 224, 208 )
+
+[node name="Tree13" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 336, 288 )
+
+[node name="Tree29" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 664, 448 )
+
+[node name="Tree30" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 824, 312 )
+
+[node name="Tree14" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 272, 352 )
+
+[node name="Tree15" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 112, 432 )
+
+[node name="Tree16" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 544, 400 )
+
+[node name="Tree17" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 608, 304 )
+
+[node name="Tree27" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 128, 256 )
+
+[node name="Tree18" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 672, 176 )
+
+[node name="Tree19" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 576, 96 )
+
+[node name="Tree20" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 384, 48 )
+
+[node name="Tree21" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 544, 256 )
+
+[node name="Tree22" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 544, 256 )
+
+[node name="Tree5" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 64, 192 )
+
+[node name="Tree6" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 304, 144 )
+
+[node name="Note1" parent="YSort" groups=[
+"Notes",
+] instance=ExtResource( 3 )]
+position = Vector2( 536, 244 )
+
+[node name="Note2" parent="YSort" groups=[
+"Notes",
+] instance=ExtResource( 3 )]
+position = Vector2( 24, 328 )
+
+[node name="Note3" parent="YSort" groups=[
+"Notes",
+] instance=ExtResource( 3 )]
+position = Vector2( 800, 252 )
+
+[node name="Note4" parent="YSort" groups=[
+"Notes",
+] instance=ExtResource( 3 )]
+position = Vector2( 440, 240 )
+
+[node name="Note5" parent="YSort" groups=[
+"Notes",
+] instance=ExtResource( 3 )]
+position = Vector2( 724, 60 )
+
+[node name="Note6" parent="YSort" groups=[
+"Notes",
+] instance=ExtResource( 3 )]
+position = Vector2( 496, 80 )
+
+[node name="Note7" parent="YSort" groups=[
+"Notes",
+] instance=ExtResource( 3 )]
+position = Vector2( 560, 148 )
+
+[node name="Navigation2D" type="Navigation2D" parent="." groups=[
+"LevelNavigation",
+]]
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
+visible = false
+navpoly = SubResource( 1 )
+
+[node name="Boundary" type="StaticBody2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary"]
+modulate = Color( 1, 0, 0, 1 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Boundary"]
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 0, 480 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Boundary"]
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Boundary"]
+position = Vector2( 880, 0 )
+shape = SubResource( 3 )
